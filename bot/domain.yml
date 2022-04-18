@@ -1,0 +1,128 @@
+version: '3.1'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- introduction
+- current_time
+- study_material
+- tracker
+- available_subjects
+- tutorials
+- interview
+entities:
+- subject
+- material_type
+responses:
+  utter_greet:
+  - text: Hey! How can I help you?
+    buttons:
+    - title: Subjects
+      payload: '/available_subjects'
+    - title: Tutorials
+      payload: '/tutorials'
+    - title: Interview questions
+      payload: '/interview'
+    - title: What can you do?
+      payload: '/introduction'
+  - text: Hey! Is there anything I can help you with?
+    buttons:
+    - title: Subjects
+      payload: '/available_subjects'
+    - title: Tutorials
+      payload: '/tutorials'
+    - title: Interview questions
+      payload: '/interview'
+    - title: What can you do?
+      payload: '/introduction'
+  - text: Welcome to site assistant! How may I assist you?
+    buttons:
+    - title: Subjects
+      payload: '/available_subjects'
+    - title: Tutorials
+      payload: '/tutorials'
+    - title: Interview questions
+      payload: '/interview'
+    - title: What can you do?
+      payload: '/introduction'
+  utter_tutorials:
+  - text: Select the subject for tutorial
+    buttons:
+    - title: Python
+      payload: '/study_material{{"subject":"python", "material_type":"tutorial"}}'
+    - title: Java
+      payload: '/study_material{{"subject":"java", "material_type":"tutorial"}}'
+    - title: RASA
+      payload: '/study_material{{"subject":"rasa", "material_type":"tutorial"}}'
+    - title: Natural language processing
+      payload: '/study_material{{"subject":"nlp", "material_type":"tutorial"}}'
+    - title: Deep learning
+      payload: '/study_material{{"subject":"deep learning", "material_type":"tutorial"}}'
+    - title: Machine learning
+      payload: '/study_material{{"subject":"machine learning", "material_type":"tutorial"}}'
+    - title: Data science
+      payload: '/study_material{{"subject":"data science", "material_type":"tutorial"}}'
+    - title: C++
+      payload: '/study_material{{"subject":"c", "material_type":"tutorial"}}'
+    - title: SQL
+      payload: '/study_material{{"subject":"sql", "material_type":"tutorial"}}'
+    - title: Power BI
+      payload: '/study_material{{"subject":"power bi", "material_type":"tutorial"}}'
+    - title: Artificial Intelligence
+      payload: '/study_material{{"subject":"ai", "material_type":"tutorial"}}'
+  utter_interview:
+  - text: Select the subject for interview
+    buttons:
+    - title: Python
+      payload: '/study_material{{"subject":"python", "material_type":"interview"}}'
+    - title: Java
+      payload: '/study_material{{"subject":"java", "material_type":"interview"}}'
+    - title: RASA
+      payload: '/study_material{{"subject":"rasa", "material_type":"interview"}}'
+    - title: Natural language processing
+      payload: '/study_material{{"subject":"nlp", "material_type":"interview"}}'
+    - title: Deep learning
+      payload: '/study_material{{"subject":"deep learning", "material_type":"interview"}}'
+    - title: Machine learning
+      payload: '/study_material{{"subject":"machine learning", "material_type":"interview"}}'
+    - title: Data science
+      payload: '/study_material{{"subject":"data science", "material_type":"interview"}}'
+    - title: C++
+      payload: '/study_material{{"subject":"c", "material_type":"interview"}}'
+    - title: SQL
+      payload: '/study_material{{"subject":"sql", "material_type":"interview"}}'
+    - title: Power BI
+      payload: '/study_material{{"subject":"power bi", "material_type":"interview"}}'
+    - title: Artificial Intelligence
+      payload: '/study_material{{"subject":"ai", "material_type":"interview"}}'
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to put a smile on yore face before we get started:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_noiamabot:
+  - text: No I am bot.
+  utter_help:
+  - text: How can I help you?
+  utter_iamabot:
+  - text: I am a intelligent chatbot, powered by Rasa and made by Indrajeet.
+  utter_icando:
+  - text: I can help you browse through different tuorials of subjects we provide, or I can guide you to best interview questions in your requested domain.
+actions:
+- action_current_time
+- action_study_material
+- action_subjects_available
+- action_track_conversations

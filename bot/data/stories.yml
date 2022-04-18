@@ -1,0 +1,77 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+#######################################################################################################################################################################
+
+- story: tracker path
+  steps:
+  - intent: tracker
+  - action: action_track_conversations
+
+- story: introduction path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: introduction
+  - action: utter_iamabot
+  - action: utter_icando
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: current time path
+  steps:
+  # - intent: greet
+  # - action: utter_greet
+  - intent: current_time
+  - action: action_current_time
+  # - intent: goodbye
+  # - action: utter_goodbye
+
+- story: available_subjects path
+  steps:
+  - intent: available_subjects
+  - action: action_subjects_available
+
+- story: study material path
+  steps:
+  # - intent: greet
+  # - action: utter_greet
+  - intent: study_material
+  - action: action_study_material
+  # - intent: goodbye
+  # - action: utter_goodbye
+
+- story: buttons path
+  steps:
+  - intent: tutorials
+  - action: utter_tutorials
+  - intent: interview
+  - action: utter_interview

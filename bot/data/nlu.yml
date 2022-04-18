@@ -1,0 +1,209 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - yo
+    - morning
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+########################################################################
+
+- intent: tracker
+  examples: |
+    - track
+    - track conversations
+    - show previous conversations
+
+- intent: available_subjects
+  examples: |
+    - subjects
+    - subjects available
+    - what can i learn here?
+    - courses provided
+
+- intent: introduction
+  examples: |
+    - tell me something about yourself?
+    - are you a bot?
+    - who are you?
+    - introduce
+    - introduce yourself
+    - what is your name?
+
+- intent: current_time
+  examples: |
+    - tell me whats the time?
+    - current time
+    - time now?
+    - whats the time now?
+
+- intent: study_material
+  examples: |
+    - help me prepare for [python](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [python](subject)
+    - send me [tutorial](material_type) videos for [python](subject)
+    - send me [tutorial](material_type) video links for [python](subject)
+    - get me some [python](subject) [tutorial](material_type) videos
+    - get me some [python](subject) [tutorial](material_type) video links
+    - help me prepare for [java](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [java](subject)
+    - send me [tutorial](material_type) videos for [java](subject)
+    - send me [tutorial](material_type) video links for [java](subject)
+    - get me some [java](subject) [tutorial](material_type) videos
+    - get me some [java](subject) [tutorial](material_type) video links
+    - help me prepare for [c](subject)++ [interview](material_type)
+    - find me some [interview](material_type) questions in [c](subject)++
+    - [c](subject)++ [interview](material_type) questions
+    - [c](subject)++ [tutorial](material_type) videos
+    - send me [tutorial](material_type) videos for [c](subject)++
+    - send me [tutorial](material_type) video links for [c](subject)++
+    - get me some [c](subject)++ [tutorial](material_type) videos
+    - get me some [c](subject)++ [tutorial](material_type) video links
+    - help me prepare for [data science](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [data science](subject)
+    - send me [tutorial](material_type) videos for [data science](subject)
+    - [data science](subject) [interview](material_type) questions
+    - [data science](subject) [tutorial](material_type) videos
+    - send me [tutorial](material_type) video links for [data science](subject)
+    - get me some [data science](subject) [tutorial](material_type) videos
+    - get me some [data science](subject) [tutorial](material_type) video links
+    - help me prepare for [machine learning](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [machine learning](subject)
+    - [machine learning](subject) [interview](material_type) questions
+    - [machine learning](subject) [tutorial](material_type) videos
+    - send me [tutorial](material_type) videos for [machine learning](subject)
+    - send me [tutorial](material_type) video links for [machine learning](subject)
+    - get me some [machine learning](subject) [tutorial](material_type) videos
+    - get me some [machine learning](subject) [tutorial](material_type) video links
+    - help me prepare for [deep learning](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [deep learning](subject)
+    - send me [tutorial](material_type) videos for [deep learning](subject)
+    - [deep learning](subject) [interview](material_type) questions
+    - [deep learning](subject) [tutorial](material_type) videos
+    - send me [tutorial](material_type) video links for [deep learning](subject)
+    - get me some [deep learning](subject) [tutorial](material_type) videos
+    - get me some [deep learning](subject) [tutorial](material_type) video links
+    - help me prepare for [natural language processing](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [natural language processing](subject)
+    - [natural language processing](subject) [interview](material_type) questions
+    - [natural language processing](subject) [tutorial](material_type) videos
+    - send me [tutorial](material_type) videos for [natural language processing](subject)
+    - send me [tutorial](material_type) video links for [natural language processing](subject)
+    - get me some [natural language processing](subject) [tutorial](material_type) videos
+    - get me some [natural language processing](subject) [tutorial](material_type) video links
+    - help me prepare for [nlp](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [nlp](subject)
+    - send me [tutorial](material_type) videos for [nlp](subject)
+    - send me [tutorial](material_type) video links for [nlp](subject)
+    - get me some [nlp](subject) [tutorial](material_type) videos
+    - get me some [nlp](subject) [tutorial](material_type) video links
+    - help me prepare for [rasa](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [rasa](subject)
+    - send me [tutorial](material_type) videos for [rasa](subject)
+    - send me [tutorial](material_type) video links for [rasa](subject)
+    - get me some [rasa](subject) [tutorial](material_type) videos
+    - get me some [rasa](subject) [tutorial](material_type) video links
+    - [rasa](subject) [interview](material_type) questions
+    - [rasa](subject) [tutorial](material_type) videos
+    - help me prepare for [ai](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [ai](subject)
+    - send me [tutorial](material_type) videos for [ai](subject)
+    - send me [tutorial](material_type) video links for [ai](subject)
+    - get me some [ai](subject) [tutorial](material_type) videos
+    - get me some [ai](subject) [tutorial](material_type) video links
+    - [ai](subject) [interview](material_type) questions
+    - [ai](subject) [tutorial](material_type) videos
+    - help me prepare for [artificial intelligence](subject) [interview](material_type)
+    - find me some [interview](material_type) questions in [artificial intelligence](subject)
+    - send me [tutorial](material_type) videos for [artificial intelligence](subject)
+    - send me [tutorial](material_type) video links for [artificial intelligence](subject)
+    - get me some [artificial intelligence](subject) [tutorial](material_type) videos
+    - get me some [artificial intelligence](subject) [tutorial](material_type) video links
+    - [artificial intelligence](subject) [interview](material_type) questions
+    - [artificial intelligence](subject) [tutorial](material_type) videos
