@@ -7,7 +7,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
-  - action: utter_happy
+  - action: utter_cheer_up
+  - action: utter_greet
 
 - story: sad path 1
   steps:
@@ -15,9 +16,10 @@ stories:
   - action: utter_greet
   - intent: mood_unhappy
   - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - action: utter_greet
+  # - action: utter_did_that_help
+  # - intent: affirm
+  # - action: utter_happy
 
 - story: sad path 2
   steps:
@@ -31,10 +33,11 @@ stories:
 
 #######################################################################################################################################################################
 
-- story: tracker path
-  steps:
-  - intent: tracker
-  - action: action_track_conversations
+# - story: tracker path
+#   steps:
+#   - intent: tracker
+#   - action: action_track_conversations
+#   - action: utter_greet
 
 - story: introduction path
   steps:
@@ -52,6 +55,7 @@ stories:
   # - action: utter_greet
   - intent: current_time
   - action: action_current_time
+  - action: utter_greet
   # - intent: goodbye
   # - action: utter_goodbye
 
@@ -59,6 +63,7 @@ stories:
   steps:
   - intent: available_subjects
   - action: action_subjects_available
+  - action: utter_greet
 
 - story: study material path
   steps:
@@ -66,6 +71,7 @@ stories:
   # - action: utter_greet
   - intent: study_material
   - action: action_study_material
+  - action: utter_greet
   # - intent: goodbye
   # - action: utter_goodbye
 
@@ -75,3 +81,14 @@ stories:
   - action: utter_tutorials
   - intent: interview
   - action: utter_interview
+  - action: utter_greet
+
+- story: details path
+  steps:
+  - intent: contact
+  - action: utter_get_details
+  - intent: get_details
+  # - slot_was_set:
+  #   - name: rahul
+  - action: utter_confirm_details
+  - action: utter_greet

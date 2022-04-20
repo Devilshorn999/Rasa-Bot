@@ -13,13 +13,38 @@ intents:
 - introduction
 - current_time
 - study_material
-- tracker
+# - tracker
 - available_subjects
 - tutorials
 - interview
+- contact
+- get_details
+
 entities:
 - subject
 - material_type
+- name
+- ph_number
+- email
+slots:
+  name:
+    type: any
+    # influence_conversation: False
+    mappings:
+    - type: from_entity
+      entity: name
+  ph_number:
+    type: float
+    influence_conversation: False
+    mappings:
+    - type: from_entity
+      entity: ph_number
+  email:
+    type: text
+    influence_conversation: False
+    mappings:
+    - type: from_entity
+      entity: email
 responses:
   utter_greet:
   - text: Hey! How can I help you?
@@ -32,6 +57,8 @@ responses:
       payload: '/interview'
     - title: What can you do?
       payload: '/introduction'
+    - title: Contact me.
+      payload: '/contact'
   - text: Hey! Is there anything I can help you with?
     buttons:
     - title: Subjects
@@ -42,6 +69,8 @@ responses:
       payload: '/interview'
     - title: What can you do?
       payload: '/introduction'
+    - title: Contact me.
+      payload: '/contact'
   - text: Welcome to site assistant! How may I assist you?
     buttons:
     - title: Subjects
@@ -52,6 +81,8 @@ responses:
       payload: '/interview'
     - title: What can you do?
       payload: '/introduction'
+    - title: Contact me.
+      payload: '/contact'
   utter_tutorials:
   - text: Select the subject for tutorial
     buttons:
@@ -104,9 +135,7 @@ responses:
       payload: '/study_material{{"subject":"ai", "material_type":"interview"}}'
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to put a smile on yore face before we get started:'
+    text: Smiles
   utter_did_that_help:
   - text: Did that help you?
   utter_happy:
@@ -121,8 +150,28 @@ responses:
   - text: I am a intelligent chatbot, powered by Rasa and made by Indrajeet.
   utter_icando:
   - text: I can help you browse through different tuorials of subjects we provide, or I can guide you to best interview questions in your requested domain.
+  utter_confirm:
+  - text: Ok. Before someone from our tech support contacts you, can you please provide me some contact details.
+  - text: You want us to contact you. Before I forward that can you please provide me with some details.
+  - text: To make it possible for my team to contact you, can you please provide me with some details.
+  utter_get_name:
+  - text: Please provide your name.
+  - text: Can I have your good name please?
+  - text: How should my team address you?
+  utter_get_number:
+  - text: Please provide your phone number.
+  - text: Can I have your number please?
+  - text: What is your contact number?
+  utter_get_email:
+  - text: Please provide your email.
+  - text: Can I have your email id please?
+  - text: What is your email id?
+  utter_get_details:
+  - text: 'Please provide contacts information after typing details, ex:- details alex 5783923834 alex@gmail.com'
+  utter_confirm_details:
+  - text: Thank you {name} for giving your contact details.\nE-Mail- {email}\nPh. Number- {ph_number}
 actions:
 - action_current_time
 - action_study_material
 - action_subjects_available
-- action_track_conversations
+# - action_track_conversations

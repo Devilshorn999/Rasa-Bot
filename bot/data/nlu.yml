@@ -94,11 +94,11 @@ nlu:
 
 ########################################################################
 
-- intent: tracker
-  examples: |
-    - track
-    - track conversations
-    - show previous conversations
+# - intent: tracker
+#   examples: |
+#     - track
+#     - track conversations
+#     - show previous conversations
 
 - intent: available_subjects
   examples: |
@@ -122,6 +122,7 @@ nlu:
     - current time
     - time now?
     - whats the time now?
+
 
 - intent: study_material
   examples: |
@@ -207,3 +208,24 @@ nlu:
     - get me some [artificial intelligence](subject) [tutorial](material_type) video links
     - [artificial intelligence](subject) [interview](material_type) questions
     - [artificial intelligence](subject) [tutorial](material_type) videos
+
+- intent: contact
+  examples: |
+    - contact me
+    - please give me a call
+    - call me.
+
+- intent: get_details
+  examples: |
+    - details [inder](name) [847 362 9573](ph_number) [inder@gmail.com](email)
+    - details [inder](name) [inder@gmail.com](email) [847 362 9573](ph_number)
+    - details [inder@gmail.com](email) [inder](name) [847 362 9573](ph_number)
+    - details [847 362 9573](ph_number) [inder@gmail.com](email) [inder](name)
+    - details [847 362 9573](ph_number) [inder](name) [inder@gmail.com](email)
+# - intent:
+#   example: |
+#     - batch details
+#       - is the bacth scheduled
+#         - yes - timing
+#         - no - when is it scheduled to start
+#             - not yet scheduled.

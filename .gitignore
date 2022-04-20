@@ -2,7 +2,7 @@
 mySecrets.py
 python/
 .rasa
-
+*.ipynb
 
 
 # Django #
