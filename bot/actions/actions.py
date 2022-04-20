@@ -9,11 +9,27 @@
 
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, ValidationAction
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.types import DomainDict
 
 from datetime import datetime as dt
 import itertools
+
+
+class ValidatePredefinedSlots(ValidationAction):
+    def validate_name(
+        self,
+        slot_value: any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        print(slot_value)
+        if isinstance(slot_value, str):
+            return {"name": slot_value.capitalize()}
+        else:
+            return {"name": None}
 
 
 class ActionHelloWorld(Action):

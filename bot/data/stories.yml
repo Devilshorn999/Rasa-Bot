@@ -75,13 +75,15 @@ stories:
   # - intent: goodbye
   # - action: utter_goodbye
 
-- story: buttons path
+- story: tutorial button
   steps:
   - intent: tutorials
   - action: utter_tutorials
+  - action: utter_greet
   - intent: interview
   - action: utter_interview
   - action: utter_greet
+
 
 - story: details path
   steps:
@@ -90,5 +92,6 @@ stories:
   - intent: get_details
   # - slot_was_set:
   #   - name: rahul
+  - action: action_validate_slot_mappings
   - action: utter_confirm_details
   - action: utter_greet

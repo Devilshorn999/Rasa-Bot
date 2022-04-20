@@ -218,6 +218,11 @@ nlu:
 - intent: get_details
   examples: |
     - details [inder](name) [847 362 9573](ph_number) [inder@gmail.com](email)
+    - details [inder](name) [8473629573](ph_number) [inder@gmail.com](email)
+    - details [inder](name) [0847 362 9573](ph_number) [inder@gmail.com](email)
+    - details [inder](name) [08473629573](ph_number) [inder@gmail.com](email)
+    - details [inder](name) [+918473629573](ph_number) [inder@gmail.com](email)
+    - details [inder](name) [+91 847 362 9573](ph_number) [inder@gmail.com](email)
     - details [inder](name) [inder@gmail.com](email) [847 362 9573](ph_number)
     - details [inder@gmail.com](email) [inder](name) [847 362 9573](ph_number)
     - details [847 362 9573](ph_number) [inder@gmail.com](email) [inder](name)

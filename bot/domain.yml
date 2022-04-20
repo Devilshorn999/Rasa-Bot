@@ -28,8 +28,8 @@ entities:
 - email
 slots:
   name:
-    type: any
-    # influence_conversation: False
+    type: text
+    influence_conversation: False
     mappings:
     - type: from_entity
       entity: name
@@ -84,7 +84,7 @@ responses:
     - title: Contact me.
       payload: '/contact'
   utter_tutorials:
-  - text: Select the subject for tutorial
+  - text: Select the subject for tutorial videos
     buttons:
     - title: Python
       payload: '/study_material{{"subject":"python", "material_type":"tutorial"}}'
@@ -109,7 +109,7 @@ responses:
     - title: Artificial Intelligence
       payload: '/study_material{{"subject":"ai", "material_type":"tutorial"}}'
   utter_interview:
-  - text: Select the subject for interview
+  - text: Select the subject for interview questions
     buttons:
     - title: Python
       payload: '/study_material{{"subject":"python", "material_type":"interview"}}'
@@ -169,9 +169,10 @@ responses:
   utter_get_details:
   - text: 'Please provide contacts information after typing details, ex:- details alex 5783923834 alex@gmail.com'
   utter_confirm_details:
-  - text: Thank you {name} for giving your contact details.\nE-Mail- {email}\nPh. Number- {ph_number}
+  - text: "Thank you {name} for giving your contact details.\nE-Mail- {email}\nPh. Number- {ph_number}"
 actions:
 - action_current_time
 - action_study_material
 - action_subjects_available
 # - action_track_conversations
+- action_validate_slot_mappings
